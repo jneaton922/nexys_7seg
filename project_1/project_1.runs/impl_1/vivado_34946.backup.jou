@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sun Jan 30 21:26:55 2022
+# Process ID: 34946
+# Current directory: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/impl_1
+# Command line: vivado -log seg7_hex.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source seg7_hex.tcl -notrace
+# Log file: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/impl_1/seg7_hex.vdi
+# Journal file: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/impl_1/vivado.jou
+# Running On: yoshi-desktop, OS: Linux, CPU Frequency: 3600.000 MHz, CPU Physical cores: 8, Host memory: 16704 MB
+#-----------------------------------------------------------
+source seg7_hex.tcl -notrace

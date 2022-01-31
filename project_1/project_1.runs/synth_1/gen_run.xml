@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1643027418" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_level.dcp">
-  <File Type="VDS-TIMING-PB" Name="top_level_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_level_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top_level.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top_level_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top_level_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top_level.vds"/>
-  <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
-  <File Type="PA-TCL" Name="top_level.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1643597461" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_level.dcp">
+  <File Type="VDS-TIMING-PB" Name="lab1_top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="lab1_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="lab1_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="lab1_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="lab1_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="lab1_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="lab1_top.vds"/>
+  <File Type="REPORTS-TCL" Name="lab1_top_reports.tcl"/>
+  <File Type="PA-TCL" Name="lab1_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
+    <File Path="$PSRCDIR/sources_1/new/seg7_hex.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/lab1_top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_level"/>
+      <Option Name="TopModule" Val="lab1_top"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

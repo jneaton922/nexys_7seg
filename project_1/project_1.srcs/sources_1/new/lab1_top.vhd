@@ -34,7 +34,7 @@ end lab1_top;
 
 architecture Behavioral of lab1_top is
 
-    signal display_digit : std_logic_vector(3 downto 0);
+    signal display_digit : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
     
@@ -42,9 +42,11 @@ begin
     LED <= SW;
 
     -- assign  seg7 input to first 4 switches
-    display_digit <= SW(3 downto 0)
+    display_digit <= SW(3 downto 0);
 
     -- instantiate decoder, map display digit as input, SEG7_CATH as output vector
-    seven_seg_decode : entity seg7_hex port map ( digit => display_digit, seg7 => SEG7_CATH);
+    seven_seg_decode : entity work.seg7_hex port map ( digit => display_digit, seg7 => SEG7_CATH);
+
+    AN <= "00000011";
     
 end Behavioral;
