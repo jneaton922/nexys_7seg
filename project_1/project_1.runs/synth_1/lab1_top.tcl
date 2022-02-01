@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/lab1_top.tcl"
+  variable script "/Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/lab1_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,24 +71,25 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.cache/wt [current_project]
-set_property parent.project_path /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.xpr [current_project]
+set_property webtalk.parent_dir /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.cache/wt [current_project]
+set_property parent.project_path /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
-set_property ip_output_repo /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.cache/ip [current_project]
+set_property ip_output_repo /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/sources_1/new/seg7_hex.vhd
-  /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/sources_1/new/lab1_top.vhd
+  /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/sources_1/new/seg7_hex.vhd
+  /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/sources_1/new/lab1_top.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -99,12 +100,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc
-set_property used_in_implementation false [get_files /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc]
+read_xdc /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc
+set_property used_in_implementation false [get_files /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/utils_1/imports/synth_1/top_level.dcp
+read_checkpoint -auto_incremental -incremental /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/utils_1/imports/synth_1/top_level.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

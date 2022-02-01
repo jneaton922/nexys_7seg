@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc rfile:../../../project_1.srcs/constrs_1/new/nexsys4_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.srcs/constrs_1/new/nexsys4_constraints.xdc rfile:../../../project_1.srcs/constrs_1/new/nexsys4_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { SW[0] }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]

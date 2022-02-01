@@ -40,6 +40,8 @@ architecture Behavioral of seg7_hex is
 
 begin
 
+    -- Cathode values determined to output hex representation of 'digit'
+    -- Values pulled from tutorial
     with digit select
     seg7 <=
         "11000000" when x"0" ,

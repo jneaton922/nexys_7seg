@@ -42,11 +42,21 @@ begin
     LED <= SW;
 
     -- assign  seg7 input to first 4 switches
-    display_digit <= SW(3 downto 0);
+    display_digit <= 
+        SW(3 downto 0) when BTNC = '0' else
+        "0000";
 
     -- instantiate decoder, map display digit as input, SEG7_CATH as output vector
     seven_seg_decode : entity work.seg7_hex port map ( digit => display_digit, seg7 => SEG7_CATH);
 
-    AN <= "00000011";
+    -- enable display digits based on SW11 through SW4 by default, otherwise depend on pushbutton states
+    -- as defined in the lab assignment
+    AN <= 
+        "00001111" when BTNU = '1' else
+        "11110000" when BTND = '1' else
+        "00000000" when BTNC = '1' else
+        not SW(11 downto 4);
+
+        
     
 end Behavioral;

@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Sun Jan 30 21:51:03 2022
-# Process ID: 44821
-# Current directory: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1
+# Start of session at: Mon Jan 31 19:25:30 2022
+# Process ID: 158394
+# Current directory: /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1
 # Command line: vivado -log lab1_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab1_top.tcl
-# Log file: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/lab1_top.vds
-# Journal file: /home/yoshi/Documents/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/vivado.jou
+# Log file: /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/lab1_top.vds
+# Journal file: /Data/Hopkins/VHDL/nexys_7seg/project_1/project_1.runs/synth_1/vivado.jou
 # Running On: yoshi-desktop, OS: Linux, CPU Frequency: 3600.000 MHz, CPU Physical cores: 8, Host memory: 16704 MB
 #-----------------------------------------------------------
 source lab1_top.tcl -notrace
