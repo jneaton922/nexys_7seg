@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -52,7 +52,31 @@ entity lab3_top is
 
 architecture Behavioral of lab3_top is
 
-begin
-    pps : entity work.pulse_gen port map ( internal => local,)
+    signal reset : std_logic;
+    signal pulse : std_logic;
 
+begin
+    
+    pps : entity work.pulse_gen port map ( 
+        clk => CLK100MHZ, 
+        rst => reset, 
+        pulse => pulse,
+        trig => x"5f5e100"  -- 100e6 hex
+    );
+
+    seg7 : entity work.seg7_controller port map (
+        clk => CLK100MHZ,
+        rst => reset,
+        c1 => x"1",
+        c2 => x"3",
+        c3 => x"5",
+        c4 => x"7",
+        c5 => x"9",
+        c6 => x"b",
+        c7 => x"d",
+        c8 => x"f",
+        anodes => AN,
+        cathodes => SEG7_CATH
+    );
+    
 end Behavioral;
