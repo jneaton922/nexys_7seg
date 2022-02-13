@@ -54,6 +54,16 @@ architecture Behavioral of lab3_top is
 
     signal reset : std_logic;
     signal pulse : std_logic;
+    signal c1 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c2 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c3 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c4 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c5 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c6 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c7 :  STD_LOGIC_VECTOR(3 downto 0);
+    signal c8 :  STD_LOGIC_VECTOR(3 downto 0);
+
+    signal counter : STD_LOGIC_VECTOR(15 downto 0);
 
 begin
     
@@ -67,16 +77,52 @@ begin
     seg7 : entity work.seg7_controller port map (
         clk => CLK100MHZ,
         rst => reset,
-        c1 => x"1",
-        c2 => x"3",
-        c3 => x"5",
-        c4 => x"7",
-        c5 => x"9",
-        c6 => x"b",
-        c7 => x"d",
-        c8 => x"f",
+        c1 => c1,
+        c2 => c2,
+        c3 => c3,
+        c4 => c4,
+        c5 => c5,
+        c6 => c6,
+        c7 => c7,
+        c8 => c8,
         anodes => AN,
         cathodes => SEG7_CATH
     );
+
+    process (CLK100MHZ, BTNC)
+    begin
+        if (BTNC = '1') then -- asynch reset
+            reset <= '1';
+            c1 <= x"0";
+            c2 <= x"0";
+            c3 <= x"0";
+            c4 <= x"0";
+            c5 <= x"0";
+            c6 <= x"0";
+            c7 <= x"0";
+            c8 <= x"0";
+
+            counter <= (others=> '0');
+
+        elsif (rising_edge(CLK100MHZ)) then
+            reset <= '0';
+            if (pulse = '1') then
+                -- left shift characters
+                c8 <= c7;
+                c7 <= c6;
+                c6 <= c5;
+                c5 <= c4;
+                c4 <= c3;
+                c3 <= c2;
+                c2 <= c1;
+                c1 <= SW(3 downto 0);
+
+                counter <= std_logic_vector( unsigned(counter) + 1);
+            end if;
+        end if;
+
+    end process;
     
+    LED <= counter;
+
 end Behavioral;
